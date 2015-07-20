@@ -1,0 +1,3 @@
+fio -ioengine=rbd -rw=write -name=ebs -thread=1 -pool=rbd -direct=1 -bs=4M -rbdname=test1 -iodepth=1 -clientname=admin
+fio -ioengine=rbd -rw=write -name=ebs -thread=1 -pool=rbd -direct=1 -bs=4k -rbdname=test1 -iodepth=1 -clientname=admin
+
