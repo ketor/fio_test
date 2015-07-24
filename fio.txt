@@ -1,3 +1,7 @@
+#RBD
 fio -ioengine=rbd -rw=write -name=ebs -thread=1 -pool=rbd -direct=1 -bs=4M -rbdname=test1 -iodepth=1 -clientname=admin
 fio -ioengine=rbd -rw=write -name=ebs -thread=1 -pool=rbd -direct=1 -bs=4k -rbdname=test1 -iodepth=1 -clientname=admin
+
+#LIBAIO
+fio -ioengine=libaio -bs=4k -direct=1 -thread -rw=randwrite -filename=/var/lib/ceph/osd/ceph-13/fio.dat -size=40G -name="EBS 4K randwrite test" -iodepth=64 -runtime=600
 
